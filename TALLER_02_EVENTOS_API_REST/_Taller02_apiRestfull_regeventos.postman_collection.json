@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "dcd0b2b1-6a38-4cd1-bd41-d1413b70dd5e",
+		"name": "_Taller02_apiRestfull_regeventos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10996454"
+	},
+	"item": [
+		{
+			"name": "get_all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/eventos",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"eventos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Cumpleaños Carito\",\r\n    \"fecha\": \"2024-09-05\",\r\n    \"ubicacion\": \"San Andrés\",\r\n    \"capacidad\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/eventos",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"eventos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_by_id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/eventos/a2c2ef0b-9b00-4089-b724-2100811a017e",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"eventos",
+						"a2c2ef0b-9b00-4089-b724-2100811a017e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Containerization: A guide to understanding and working with docker\",\r\n        \"fecha\": \"2024-04-27\",\r\n        \"ubicacion\": \"Medellín\",\r\n        \"capacidad\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/eventos/5de91a0f-9b63-4523-9dbf-af79db560877",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"eventos",
+						"5de91a0f-9b63-4523-9dbf-af79db560877"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/eventos/f4de8480-edd5-4159-97d7-f34b446a2cf1",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"eventos",
+						"f4de8480-edd5-4159-97d7-f34b446a2cf1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/eventos/paginate?page=1&size=10",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"eventos",
+						"paginate"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080/api/v1"
+		}
+	]
+}
